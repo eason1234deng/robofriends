@@ -20,12 +20,11 @@ class App extends Component { // Smart component = stateful component
 
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/users') // no context, not part of react => a method on the window object -> comes with all browsers now
-        .then(response => response.json())
+        .then(response => response.json)
         .then(users => {
             this.originalRobots = users;
             this.setState({ robots: users });
         });
-        console.log('this.originalRobots', this.originalRobots);
     }
 
     onSearchFieldChange(e) { // Or can use arrow function so we don't need to bind this, value of this is determined at runtime and depends on context => tricky
