@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardList from './Components/CardList';
+import ErrorBoundary from './Components/ErrorBoundary';
 import SearchBox from './Components/SearchBox';
 import Scroll from './Components/Scroll';
 import './Styles/App.css';
@@ -53,7 +54,9 @@ class App extends Component { // Smart component = stateful component
                 <h1 className='f1'>RoboFriends</h1>
                 <SearchBox onSearchFieldChange={this.onSearchFieldChange}/>
                 <Scroll>
-                    <CardList robots={this.state.robots}/>
+                    <ErrorBoundary>
+                        <CardList robots={this.state.robots}/>
+                    </ErrorBoundary>
                 </Scroll>
             </div>
         );
