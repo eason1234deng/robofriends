@@ -25,6 +25,7 @@ class App extends Component { // Smart component = stateful component
             this.originalRobots = users;
             this.setState({ robots: users });
         });
+        console.log('this.originalRobots', this.originalRobots);
     }
 
     onSearchFieldChange(e) { // Or can use arrow function so we don't need to bind this, value of this is determined at runtime and depends on context => tricky

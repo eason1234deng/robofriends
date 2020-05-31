@@ -16,6 +16,8 @@ import Card from './Card';
 const CardList = ({ robots }) => { // Pure component = dump component
     const cardArray = robots.map(robot => <Card key={robot.id} id={robot.id} email={robot.email} name={robot.name}/>);
 
+    console.log(robots);
+
     return <div>{cardArray}</div>
 }
 
