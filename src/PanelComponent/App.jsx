@@ -20,43 +20,9 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class App extends Component { // Smart component = stateful component
-    // constructor(props) {
-    //     super(props);
-
-    //     // this.originalRobots = [];
-    //     // this.state = {
-    //     //     robots: []
-    //     // };
-
-    //     // this.onSearchFieldChange = this.onSearchFieldChange.bind(this);
-    // }
-
     componentDidMount() {
-        // fetch('https://jsonplaceholder.typicode.com/users') // no context, not part of react => a method on the window object -> comes with all browsers now
-        // .then(response => response.json())
-        // .then(users => {
-        //     this.originalRobots = users;
-        //     this.setState({ robots: users });
-        // });
         this.props.onRequestRobots();
     }
-
-    // onSearchFieldChange(e) { // Or can use arrow function so we don't need to bind this, value of this is determined at runtime and depends on context => tricky
-    //     const searchValue = e.target.value.toLowerCase();
-    //     let newRobots = this.originalRobots;
-    //     const { searchField } = this.props;
-    //     if (typeof(searchValue) === 'string' || searchValue instanceof String) {
-    //         if (searchValue.length > searchField.length) {
-    //             newRobots = this.state.robots;
-    //         }
-    //         if (searchValue.length > 0) {
-    //             newRobots = newRobots.filter(robot => robot.name.toLowerCase().includes(searchValue));
-    //         }
-    //     }
-    //     this.setState({
-    //         robots: newRobots
-    //     });
-    // }
 
     render() {
         const { onSearchFieldChange, searchField, robots, isPending, error } = this.props;
